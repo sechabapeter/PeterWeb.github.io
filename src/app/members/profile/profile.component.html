@@ -1,0 +1,338 @@
+<app-nav></app-nav>
+
+<div class="container contact" *ngIf="auth.user | async as user">
+    <div class="row">
+        <div class="col-md-3 aqua-gradient">
+            <div class="contact-info">
+                <div class="image-container">
+                    <span>
+                        <div class="image-container">
+                            <div class="container">
+                              <div class="avatar-upload">
+                                <div class="avatar-edit" (change)="uploadImage($event, user)">
+                                  <input type='file' id="imageUpload" accept="image/*" />
+                                  <label for="imageUpload"></label>
+                                </div>
+                               <div>
+                                  <img class="avatar-preview"  id="imagePreview"
+                                  src="{{user.photoURL}}"/>
+                                    
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+              
+          </span>
+                </div>
+
+                <div class="userData ml-12 row-2 text-center">
+
+                    <h2 class="d-block col" style="font-size: 1.5rem; font-weight: bold">{{user.firstName}} {{ user.lastName }}</h2>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="contact-form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Profile Information</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Projects</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                                    <div class="active-cyan-4 mb-4">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <form [formGroup]="profileForm" (ngSubmit)="updateUser(user)">
+                                                    <div class="row register-form">
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="enterpriseID">Enterprise ID</label>
+                                                                <div>
+                                                                    <input type="text" class="form-control" id="enterpriseID" value="{{user.enterpriseID}}" name="enterpriseID" readonly>
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="firstName">First Name</label>
+                                                                <input type="text" class="form-control" id="firstName" name="firstName" value="{{user.firstName}}" readonly>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="form-group">
+                                                                <label class="control-label " for="middleName">Middle
+                                                                    Name</label>
+                                                                <input type="text" class="form-control" placeholder="" value="" formControlName="middleName" (blur)="logValidationErrors()" />
+                                                                <span class="help-block" *ngIf="formErros.middleName">
+                                                                    {{ formErros.middleName }}
+                                                                </span>
+                                                            </div>
+                                                            <hr>
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="lastName">Last Name</label>
+                                                                <input type="text" class="form-control" id="lastName" name="lastName" value="{{user.lastName}}" readonly>
+                                                            </div>
+
+                                                            <hr />
+                                                            <div class="form-group" [ngClass]="{'has-error' : formErros.cellNumber}">
+                                                                <label class="control-label " for="cellNumber">Cell
+                                                                    Number</label>
+                                                                <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="" value="" formControlName="cellNumber" (blur)="logValidationErrors()" />
+                                                                <span class="help-block" *ngIf="formErros.cellNumber">
+                                                                    {{ formErros.cellNumber }}
+                                                                </span>
+                                                            </div>
+
+                                                            <hr>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="dateOfBirth">Date of Birth</label>
+                                                                <div>
+                                                                    <input type="text" class="form-control" id="dateOfBirth" value="{{user.dateOfBirth}}" name="dateOfBirth" readonly>
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+
+                                                            <div class="form-group">
+                                                                <div><label class="control-label" for="gender">Gender</label>
+                                                                    <input type="text" class="form-control" id="gender" name="gender" value="{{user.gender}}" readonly>
+                                                                </div>
+                                                            </div>
+
+                                                            <hr>
+
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="capability">Capability</label>
+                                                                <div>
+                                                                    <input type="text" class="form-control" id="capability" value="{{user.capability}}" name="capability" readonly>
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="careerLevel">Career Level</label>
+                                                                <div>
+                                                                    <input type="text" class="form-control" id="careerLevel" value="{{user.careerlevel}}" name="careerLevel" disabled>
+                                                                </div>
+                                                            </div>
+                                                            <hr>
+                                                            <!-- Button trigger modal -->
+
+                                                            <div class="form-group">
+                                                                <!-- <div class="col-md-12"> -->
+                                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#basicExampleModal">
+                                                                     Edit Skills
+          </button>
+
+                                                                <!-- </div> -->
+                                                            </div>
+
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <div class="col-12">
+                                                                                <div class="row">
+                                                                                    <div class="col-7">
+                                                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Skills</h5>
+                                                                                    </div>
+                                                                                    <div class="col-3 control-buttons">
+
+                                                                                    </div>
+                                                                                    <div class="col-2">
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <form (ngSubmit)="upadateSkill(user)" [formGroup]="profileForm">
+
+                                                                                <div class="col-md-12">
+                                                                                    <div formArrayName="skills">
+                                                                                        <div *ngFor="let skill of skillArray.controls; let i = index;" [formGroupName]="i">
+                                                                                            <div class="row">
+                                                                                                <div class="col-12">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-8">
+                                                                                                            <h4>Skill {{i+1}}</h4>
+
+                                                                                                        </div>
+                                                                                                        <div class="col-4 control-buttons">
+                                                                                                            <!-- <img src="http://www.iconarchive.com/download/i80209/custom-icon-design/flatastic-1/add-1.ico" alt="" width="24" height="24" (click)="addSkill()">                                                                                                            &nbsp; -->
+                                                                                                            <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/subtraction-2-742239.png " alt=" " width="24 " height="24" (click)="removeSkill(i) ">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <hr>
+                                                                                                </div>
+                                                                                                <!-- <div class="col-md-12 "> -->
+                                                                                                <div class="col-md-6">
+                                                                                                    <!-- <div class="row"> -->
+
+                                                                                                    <!-- &nbsp; -->
+                                                                                                    <!-- </div> -->
+
+                                                                                                    <!-- <div class="row"> -->
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="control-label" for="skillName ">Skill Name</label>
+                                                                                                        <div>
+                                                                                                            <input type="text " class="form-control " id="skillName " formControlName="skillName" name="skillName ">
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="control-label " for="skillLevel ">Skill Level</label>
+                                                                                                        <div>
+                                                                                                            <select id="skillLevel " class="form-control" formControlName="skillLevel">
+                                  <option selected [ngValue]="null ">Choose...</option>
+                                    <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                  <option>6</option>
+                                  <option>7</option>
+                                  <option>8</option>
+                                  <option>9</option>
+                                  <option>10</option>
+                                </select>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <!-- </div> -->
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                    <div class="form-group ">
+                                                                                                        <label class="control-label " for="skillOrigin ">Skill Origin</label>
+                                                                                                        <div>
+                                                                                                            <select id="skillOrigin" class="form-control" formControlName="skillOrigin">
+                                                    <option selected [ngValue]="null ">Choose...</option>
+                                                      <option>High school</option>
+                                                    <option>University</option>
+                                                    <option>Self taught</option>
+                                                    <option>Work experience</option>
+                                                   
+                                                                                                                                             </select>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="form-group ">
+                                                                                                        <label class="control-label" for="lastUsed ">Last Used</label>
+                                                                                                        <div>
+                                                                                                            <input type="date" class="form-control " id="lastUsed " formControlName="lastUsed" name="lastUsed ">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                                <!-- </div> -->
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-default" (click)="addSkill()">
+                                                                                Add skill
+                     </button>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                                            <button type="button" class="btn btn-default" (click)="upadateSkill(user)" data-dismiss="modal">Save changes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-md-12">
+                                                                <button type="submit" class="btn btn-default">Save</button>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Another tab-->
+                                <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="active-cyan-4 mb-4">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                                <div class="row register-form" *ngFor="let project of user.project">
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="currentProject">Current Project</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="currentProject" placeholder="None" [value]="project.projectName" name="currentProject" readonly>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="currentStatus">Current Status</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="currentStatus" placeholder="None" [value]="project.status" name="currentStatus" readonly>
+
+                                                            </div>
+                                                        </div>
+                                                        <hr class="size">
+                                                    </div>
+                                                    <hr>
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="startDate">Start Date</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="startDate" placeholder="None" [value]="project.memberStartDate" name="startDate" readonly>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="memberPlannedRollOff">Planned Roll Off</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="memberPlannedRollOff" placeholder="None" [value]="project.memberPlannedRollOff" name="memberPlannedRollOff" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="size">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

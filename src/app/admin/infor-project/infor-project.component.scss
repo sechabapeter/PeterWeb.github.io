@@ -1,0 +1,146 @@
+.smallerFont {
+    font-size: 22px;
+    margin-top: 2vh;
+}
+
+.input-res {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+#myInput {
+    background-image: url('/css/searchicon.png');
+    /* Add a search icon to input */
+    background-position: 10px 12px;
+    /* Position the search icon */
+    background-repeat: no-repeat;
+    /* Do not repeat the icon image */
+    width: 100%;
+    /* Full-width */
+    font-size: 16px;
+    /* Increase font-size */
+    padding: 12px 20px 12px 40px;
+    /* Add some padding */
+    border: 1px solid #ddd;
+    /* Add a grey border */
+    margin-bottom: 12px;
+    /* Add some space below the input */
+}
+
+#pName {
+    text-align: center;
+    font-size: 20px;
+}
+
+.ng-touched .ng-invalid {
+    border: 0.5px solid red;
+}
+
+#ll {
+    text-align: center;
+}
+
+#myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li a {
+    border: 1px solid #ddd;
+    /* Add a border to all links */
+    margin-top: -1px;
+    /* Prevent double borders */
+    background-color: #f6f6f6;
+    /* Grey background color */
+    padding: 12px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove default text underline */
+    font-size: 18px;
+    /* Increase the font-size */
+    color: black;
+    /* Add a black text color */
+    display: block;
+    /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+    /* Add a hover effect to all links, except for headers */
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: 16px;
+}
+
+.navbar-center h1 {
+    font-size: 26px;
+}
+
+body {
+    background-color: #25274d;
+}
+
+.contact {
+    padding: 4%;
+    height: 400px;
+}
+
+.col-md-3 {
+    padding: 4%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.contact-info {
+    margin-top: 10%;
+}
+
+.contact-info img {
+    margin-bottom: 15%;
+}
+
+.contact-info h2 {
+    margin-bottom: 10%;
+}
+
+.col-md-9 {
+    background: #fff;
+    padding: 3%;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+// .Search
+// {
+//   padding: 2%;
+//   border-top-left-radius: 0.5rem;
+//   border-bottom-left-radius: 0.5rem;
+//   border-top-right-radius: 0.5rem;
+//   border-bottom-right-radius: 0.5rem;
+//   size: 100%;
+//   width: 100%;
+// }
+.Dropdown {
+    padding: 2%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    size: 100%;
+    width: 330px;
+}
+
+hr {
+    border: 1px solid black;
+}

@@ -1,0 +1,244 @@
+<div *ngIf="auth.user | async as user">
+    <app-admin-navigation *ngIf="user.IsAdmin">
+
+    </app-admin-navigation>
+
+
+
+    <app-nav *ngIf="!user.IsAdmin"></app-nav>
+
+    <!--Main Navigation-->
+
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <!-- <main class="mt-5"> -->
+
+    <!--Main container-->
+    <div class="container">
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-7 mb-4">
+
+                <!--Carousel Wrapper-->
+                <div id="carousel-example-2" class="carousel slide
+                    carousel-fade" data-ride="carousel">
+                    <!--Indicators-->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                    </ol>
+                    <!--/.Indicators-->
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div class="view item">
+                                <img class="d-block w-100" src="../../../assets/images/Accenture5.jpg" alt="First slide">
+                                <div class="mask rgba-black-light"></div>
+                            </div>
+                            <!-- <div class="carousel-caption">
+              <h3 class="h3-responsive">Light mask</h3>
+              <p>First text</p>
+            </div> -->
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view item">
+                                <img class="d-block w-100" src="../../../assets/images/Accenture10.jpg" alt="Second slide">
+                                <div class="mask rgba-black-strong"></div>
+                            </div>
+                            <!-- <div class="carousel-caption">
+              <h3 class="h3-responsive">Strong mask</h3>
+              <p>Secondary text</p>
+            </div> -->
+                        </div>
+                        <div class="carousel-item">
+                            <!--Mask color-->
+                            <div class="view item">
+                                <img class="d-block w-100" src="../../../assets/images/Accenture8.jpg" alt="Third slide">
+                                <div class="mask rgba-black-slight"></div>
+                            </div>
+                            <!-- <div class="carousel-caption">
+              <h3 class="h3-responsive">Slight mask</h3>
+              <p>Third text</p>
+            </div> -->
+                        </div>
+                    </div>
+                    <!--/.Slides-->
+                    <!--Controls-->
+                    <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    <!--/.Controls-->
+                </div>
+                <!--/.Carousel Wrapper-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-5 mb-4">
+
+                <h2>Welcome to Team Portal Overview</h2>
+                <hr>
+                <p>Accenture solves our clients' toughest challenges by providing unmatched services in strategy, consulting, digital, technology and operations. We partner with more than three-quarters of the Fortune Global 500, driving innovation to improve
+                    the way the world works and lives. With expertise across more than 40 industries and all business functions, we deliver transformational outcomes for a demanding new digital world.</p>
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img src="https://www.innomag.no/wp-content/uploads/ai_0.jpg" class="card-img-top" alt="">
+                        <a href="#">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h4 class="card-title">Artificial Intelligence</h4>
+                        <!--Text-->
+                        <div>
+                            <p>
+                                Ours is an industry that has shown a willingness and ability to capitalize on emerging ideas, using<span id="dots2">...</span>
+                                <span id="more2"> them to differentiate our businesses and create value for our clients. It’s why capital markets firms are so well positioned to take advantage of the latest
+                                technological developments, and why capital markets are poised to be transformed by artificial intelligence (AI). However, until now, most firms have focused on using these technologies to cut costs, but AI has the potential
+                                to create value across the organization in entirely new ways. What makes AI so transformative is its ability to learn. Deterministic technologies that mimic human behaviors are being superseded by intelligent systems that
+                                not only perform at or beyond human capacity, but evolve and develop new capabilities like people too. That’s creating new opportunities for capital markets firms to not only cut costs, but to add value for clients, employees
+                                and other stakeholders across the organization.</span>
+                            </p>
+
+                            <a onclick="myFunction2()" id="myBtn2" class="p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#colla1" aria-expanded="false" aria-controls="collapseContent">read more...</a>
+                        </div>
+                        <!-- <a href="#!" class="btn btn-indigo">Button</a> -->
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img src="https://cdn.wonderfulengineering.com/wp-content/uploads/2013/11/robot-wallpaper-4.jpg" class="card-img-top" alt="">
+                        <a href="#">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h4 class="card-title">Robotics</h4>
+                        <!--Text-->
+                        <div>
+                            <p>
+                                New and emerging technology, such as robotic process automation, cognitive computing and the Internet of Things<span id="dots1">...</span>
+                                <span id="more1"> (IoT)
+                                    will profoundly impact and transform the
+                                    workforce of the future across the financial
+                                    sector.
+                                    Robotics Process Automation (RPA) is
+                                    providing digital speed to market and cost
+                                    take outs for financial institutions,
+                                    but the successful financial institutions of
+                                    tomorrow will be those who embrace the next
+                                    wave of robotics technology
+                                    and future technology to drive business
+                                    outcome.</span>
+                            </p>
+
+                            <a onclick="myFunction1()" id="myBtn1" class="p-1 my-1 mr-0 mml-1 collapsed" data-toggle="collapse" href="#colla2" aria-expanded="false" aria-controls="collapseContent">read more...</a>
+                        </div>
+                        <!-- <a href="#" class="btn btn-indigo">Button</a> -->
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img src="https://www.accenture.com/t20170717T182208Z__w__/sk-en/_acnmedia/Accenture/next-gen-5/service-capital-project-services-overview/Accenture-Digital-Capital-Projects.jpg" class="card-img-top" alt="">
+                        <a href="#">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h4 class="card-title">Digital Capital</h4>
+                        <!--Text-->
+                        <div>
+                            <p>
+                                Accenture’s Digital Capital Projects services and solutions help companies deliver greater value from their projects as well<span id="dots">...</span> <span id="more">as
+                                    improved capital efficiency of the whole
+                                    project portfolio. Harnessing the latest in
+                                    operational and information technologies,
+                                    Digital Capital Projects enables better
+                                    control, reduced time to market, minimized
+                                    budget variances and improved asset
+                                    performance.</span>
+                            </p>
+                            <!-- <a onclick="myFunction()" id="myBtn">Read more</a> -->
+                            <a onclick="myFunction()" id="myBtn" class="p-1 my-1
+                                mr-0 mml-1 collapsed" data-toggle="collapse" href="#colla3" aria-expanded="false" aria-controls="collapseContent">read more...</a>
+                        </div>
+                        <!-- <a href="#" class="btn btn-indigo">Button</a> -->
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+    <!--Main container-->
+
+    <!-- </main> -->
+    <!--Main layout-->
+
+
+</div>

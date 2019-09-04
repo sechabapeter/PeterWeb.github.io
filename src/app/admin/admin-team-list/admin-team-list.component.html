@@ -1,0 +1,33 @@
+<app-admin-navigation></app-admin-navigation>
+
+<section>
+    <div class="container-fluid container" id="wrapper">
+        <table class="table table-striped table-borederd dt-responsive" style="width: 100%" id="mydatatable">
+            <thead class="black white-text aqua-gradient lighten-4">
+                <tr>
+                    <th>Member mail</th>
+                    <th>Full Name</th>
+                    <!-- <th scope="col">Member</th> -->
+                    <!-- <th scope="col">Skills</th>
+                    <th scope="col">Availability</th> -->
+                    <th scope="col"><a [routerLink]="[ '/user-form' ]"><i class="fas fa-plus-circle fa-1.5x"></i>
+              &nbsp;Add Member</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let member of members">
+                    <th>{{ member.email }}</th>
+                    <th scope="row">{{ member.firstName }} {{ member.lastName }}</th>
+                    <!-- <th scope="row">{{ member.firstName }} {{ member.lastName }}</th> -->
+                    <!-- <td>{{ member.skills }}</td>
+                    <td> <span class="d-inline-block text-truncate text-capitalize" style="max-width: 200px;">
+              {{ member.status }}
+            </span></td> -->
+                    <td><a (click)="updateProfile(member.uid)">Update</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+

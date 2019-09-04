@@ -1,0 +1,74 @@
+<div *ngIf="auth.user | async as user">
+    <!--Navbar -->
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark aqua-gradient lighten-4 sticky-top">
+        <a class="navbar-brand" href="/home" (click)="setTitle( 'Home' )">
+            <img class="logo" src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45" width="120" alt="accenture-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555" aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <strong>
+                        <a class="nav-link navColor" routerLink="/home" routerLinkActive="active">Home</a>
+                    </strong>
+                </li>
+                <li class="nav-item">
+                    <strong>
+                        <a class="nav-link navColor" routerLink="/admin-team-list" routerLinkActive="active">Members</a>
+                    </strong>
+                </li>
+                <li class="nav-item navColor">
+                    <strong>
+                        <a class="nav-link navColor" routerLink="/manage-projects"
+                            routerLinkActive="active">Projects</a>
+                    </strong>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="welcome navColor nav-item">
+                    <!-- <strong> -->
+                    Welcome, {{ user.firstName }}!
+                    <!-- </strong> -->
+                </li>
+                <li class="nav-item avatar dropdown">
+                    <a class="nav-link inset" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img id="user-photo" class="avatar" src="http://wilkinsonschool.org/wp-content/uploads/2018/10/user-default-grey.png" alt="Profile Picture">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-55">
+                        <a class="dropdown-item" href="/admin-team-list"><strong>Members</strong></a>
+                        <a class="dropdown-item" href="/login"><strong>Logout</strong></a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <!--/.Navbar-->
+
+    <div class="backDiv">
+        <div class="modal fade" id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" class="aqua-gradient">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">&nbsp; Notification</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <p>
+                                Your role was confirmed by the admin and now you can use the application to do all your work.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button btn-info" class="btn btn-outline-default waves-effect btn-sm " data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

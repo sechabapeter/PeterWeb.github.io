@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+
+
+
+.navbar-nav a.active {
+  color: wheat !important;
+}
+
+body {
+  background-color: lightgray;
+}
+
+html {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#toast-container > div {
+  opacity:1;
+}
+
+// body{
+//     background: url('https://a.mktgcdn.com/p/1csFIDmP3ho81msA5C5CQLzaySSsa86h8yoGGI0Y3po/480x270.jpg') no-repeat;
+
+//     background-size: cover;
+//     height: 100%;
+// }

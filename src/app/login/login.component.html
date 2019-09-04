@@ -1,0 +1,98 @@
+<header>
+    <nav class="navbar fixed-top navbar-light aqua-gradient">
+        <img src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45" width="120" alt="accenture-logo">
+    </nav>
+</header>
+
+<!-- Material form login -->
+
+<body>
+    <img src="https://www.americaninno.com/wp-content/uploads/2018/07/ACCENTURE_ATL_Reception-Logo.jpg " class="back">
+
+    <div class="loginbox">
+        <div class="card">
+
+            <img src="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-male-3-512.png" class="avatar">
+            <br>
+            <br>
+            <br>
+            <h5 class="card-header aqua-gradient white-text text-center py-4">
+                <strong>Sign in</strong>
+            </h5>
+
+            <!--Card content-->
+            <div class="card-body">
+
+                <!-- Form -->
+                <form class="needs-validation" #form="ngForm" style="color: #757575;" novalidate>
+
+                    <!-- Email -->
+
+                    <div class="md-form">
+
+                        <input type="email" id="materialLoginFormEmail" required [(ngModel)]="user.EID" [ngModelOptions]="{standalone: true}" class="form-control" ngModel required id="EID">
+                        <label for="materialLoginFormEmail" class="lable1">Email</label>
+                        <div class="valid-feedback">
+                            <strong>
+                Looks good!
+              </strong>
+                        </div>
+
+                        <div class="invalid-feedback">
+                            <strong>
+                Enter a valid email! 
+              </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="md-form">
+
+                        <input type="password" id="materialLoginFormPassword" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" class="form-control" ngModel required id="password" required>
+                        <label for="materialLoginFormPassword" class="lable1">Password</label>
+
+                        <div class="valid-feedback">
+                            <strong>
+                Looks good!
+              </strong>
+                        </div>
+
+                        <div class="invalid-feedback">
+                            <strong>
+                required!
+              </strong>
+                        </div>
+                    </div>
+                    <!-- Sign in button -->
+                    <div class="md-form">
+                        <p>
+                            <a class="router">
+                                <button type="submit" id="submit" class="btn btn-info btn-rounded aqua-gradient" (click)=signInWithEmail()>login</button>
+                            </a>
+                        </p>
+                        <p>
+
+                            <!-- <a href="#">Forgot Password?</a> -->
+
+                            <!-- <a class="router" routerLink="/admin-home">
+                <button type="button" class="btn btn-info btn-rounded aqua-gradient"
+                  (click)="toggleDiv()">Admin</button>
+              </a> -->
+                        </p>
+                    </div>
+                    <div>
+                        <button class="forgot" full color="clear" (click)="resetPassword()">
+              <strong>
+                Change password?
+              </strong>
+            </button>
+                    </div>
+                </form>
+                <!-- Form -->
+            </div>
+        </div>
+        <!-- Material form login -->
+    </div>
+</body>

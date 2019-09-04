@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "getdata-28580",
+    "staging": "getdata-28580"
+  }
+}

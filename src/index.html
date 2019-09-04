@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Team Portal</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="assets/ms-icon-70x70.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="icon" type="image/x-icon" href="favicon.ico">-->
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body class="body">
+    <app-root></app-root>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <script>
+        //  var $ = jQuery = require("jquery")
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script>
+        $(document).ready(function() {
+            $("#dateOfBirth").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#fromdatepicker").on("change", function() {
+                var fromdate = $(this).val();
+                // alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#fromdatepicker").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#fromdatepicker").on("change", function() {
+                var fromdate = $(this).val();
+                alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#fromdatepickersend").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#fromdatepicker").on("change", function() {
+                var fromdate = $(this).val();
+                alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#dateOfBirth").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#fromdatepicker").on("change", function() {
+                var fromdate = $(this).val();
+                // alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#fromdatepicker").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#fromdatepicker").on("change", function() {
+                var fromdate = $(this).val();
+                alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#fromdatepickersend").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#fromdatepicker").on("change", function() {
+                var fromdate = $(this).val();
+                alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#from-date_pickers").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#from-date_pickers").on("change", function() {
+                var fromdate = $(this).val();
+                // alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#from-date_pickers_").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#from-date_pickers_").on("change", function() {
+                var fromdate = $(this).val();
+                // alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#from-datepickers_").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#from-datepickers_").on("change", function() {
+                var fromdate = $(this).val();
+                // alert(fromdate);
+                alert(fromdate);
+            });
+        });
+    </script>
+    <script>
+        function preview_image(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('imagePreview');
+                var output1 = document.getElementById('user-photo');
+                output.src = reader.result;
+                output1.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+
+        }
+    </script>
+    <script type="text/javascript">
+        // Edit row on edit button click
+        $(document).on("click", ".edit", function() {
+            $(this).parents("tr").find("td:not(:last-child)").each(function() {
+                $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+            });
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-new").attr("disabled", "disabled");
+        });
+
+        // Add row on add button click
+        $(document).on("click", ".add", function() {
+            var empty = false;
+            var input = $(this).parents("tr").find('input[type="text"]');
+            input.each(function() {
+                if (!$(this).val()) {
+                    $(this).addClass("error");
+                    empty = true;
+                } else {
+                    $(this).removeClass("error");
+                }
+            });
+            $(this).parents("tr").find(".error").first().focus();
+            if (!empty) {
+                input.each(function() {
+                    $(this).parent("td").html($(this).val());
+                });
+                $(this).parents("tr").find(".add, .edit").toggle();
+                $(".add-new").removeAttr("disabled");
+            }
+        });
+    </script>
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more...";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less...";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+    <script>
+        function myFunction1() {
+            var dots = document.getElementById("dots1");
+            var moreText = document.getElementById("more1");
+            var btnText = document.getElementById("myBtn1");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more...";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less...";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+
+    <script>
+        function myFunction2() {
+            var dots = document.getElementById("dots2");
+            var moreText = document.getElementById("more2");
+            var btnText = document.getElementById("myBtn2");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more...";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less...";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+</body>
+
+</html>

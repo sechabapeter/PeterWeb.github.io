@@ -1,0 +1,126 @@
+<header>
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark aqua-gradient lighten-4 fixed-top">
+    <a class="navbar-brand" href="/home" (click)="setTitle( 'Home' )">
+      <img src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45"
+        width="120" alt="accenture-logo">
+    </a>
+    <div class="navbar-brand">
+
+    </div>
+  </nav>
+</header>
+<br>
+
+<div class="container contact">
+  <div class="row">
+    <div class="col-md-3 aqua-gradient">
+      <div class="contact-info text-center">
+        <img src="https://static.thenounproject.com/png/213124-200.png" alt="image" />
+        <h2>New Project</h2>
+
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="contact-form">
+        <br><br>
+        <div class="row">
+          <form method="POST" (ngSubmit)="submit()" class="needs-validation" novalidate>
+            <div class="col-md-12 register-right">
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                  <div class="row register-form">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="control-label " for="projectID">Project ID *</label>
+                        <input type="text" formControlName="projectID" id="projectID" class="form-control" value="">
+                        <div class="invalid-feedback">Please provide valid Project ID</div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label " for="projectName">Project Name *</label>
+                        <input type="text" formControlName="projectName" id="projectName" class="form-control"
+                          value="" />
+                        <div class="invalid-feedback">Please provide valid Project name</div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label " for="clientName">Client Name *</label>
+                        <input type="text" formControlName="clientName" id="clientName" class="form-control" value="" />
+                        <div class="invalid-feedback">Please provide valid Client name</div>
+                      </div>
+
+                      <div class="row register-form">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="control-label " for="projectMnager">Project ID *</label>
+                            <input type="text" class="form-control" placeholder="" value="" id="Project_ID"
+                              [(ngModel)]="user.Project_ID" />
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label " for="projectMnager">Project Name *</label>
+                            <input type="text" class="form-control" placeholder="" value="" id="Project_Name"
+                              [(ngModel)]="user.Project_Name" />
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label " for="projectMnager">Client Name *</label>
+                            <input type="text" class="form-control" placeholder="" value="" id="Client_Name"
+                              [(ngModel)]="user.Client_Name" />
+                          </div>
+
+                          <div class="col-md-6">
+
+                            <div class="form-group">
+                              <label class="control-label " for="projectMnager">Start Date *</label>
+                              <input placeholder="yyyy-mm-dd" type="text" id="from-datepicker"
+                                class="form-control datepicker" id="Start_Date" [(ngModel)]="user.Start_Date" />
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label " for="projectMnager">End Date *</label>
+                              <input placeholder="yyyy-mm-dd" type="text" id="from-datepickers"
+                                class="form-control datepicker" id="End_Date" [(ngModel)]="user.End_Date" />
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label " for="projectMnager">Project Manager *</label>
+                              <input type="text" class="form-control" placeholder="" value="" id="Project_Manager"
+                                [(ngModel)]="user.Project_Manager" />
+                            </div>
+
+                          </div>
+                          <div class="form-group col-md-12">
+                            <label class="control-label " for="description">Project Description *</label>
+                            <div class="">
+                              <textarea class="form-control" rows="5" id="description" [(ngModel)]="user.description">
+                                  {{ projectItem }}
+                                </textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col">
+                          <button type="submit" class="btn btn-default" (click)="createProject()">Create</button>
+                          <a href="/manage-projects"><button type="button"
+                              class="btn btn-primary  btn-rounded">Cancel</button></a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="page-footer font-small blue aqua-gradient fixed-bottom" style=" bottom: 0%;">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-2 aqua-gradient lighten-4" id="footer">© 2019 Copyright:
+      <a href="/home"> Teamportal.com</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>

@@ -1,0 +1,334 @@
+<header>
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark aqua-gradient lighten-4 fixed-top">
+        <a class="navbar-brand" href="/home" (click)="setTitle( 'Home' )">
+            <img src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45" width="120" alt="accenture-logo">
+        </a>
+        <div class="navbar-brand">
+
+        </div>
+    </nav>
+</header>
+
+<br>
+
+<div class="container contact">
+    <div class="row">
+        <div class="col-md-3  aqua-gradient">
+            <div class="contact-info text-center">
+                <img src="https://www.pngrepo.com/download/125995/multiple-users-silhouette.png" alt="" height="150px" />
+                <h3></h3>
+                <p class="bold" style="font-size: 1.5rem; font-weight: bold">{{ pageTitle }}</p>
+                <p class="bold" style="font-size: 1.5rem; font-weight: bold">{{ member?.firstName }} {{ member?.lastName }}</p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="contact-form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Member Information</a>
+                                </li>
+
+                                <!-- <ul></ul> -->
+                            </ul>
+                            <div class="tab-content ml-1" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                    <div class="row">
+                                        <div class="col-md-12 register-right">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                    <form [formGroup]="memberForm" (ngSubmit)="onSubmit()">
+                                                        <div class="row register-form">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.enterpriseID}">
+                                                                    <label class="control-label " for="enterpriseID">Enterprise ID</label>
+                                                                    <input type="text" id="enterpriseID" class="form-control" formControlName="enterpriseID" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.enterpriseID">
+                                                                        {{ formErros.enterpriseID }}
+                                                                    </span>
+                                                                </div>
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.firstName}">
+                                                                    <label class="control-label " for="firstName">First
+                                                                        Name</label>
+                                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="firstName" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.firstName">
+                                                                        {{ formErros.firstName }}
+                                                                    </span>
+                                                                </div>
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.middleName}">
+                                                                    <label class="control-label " for="lastName">Last Name
+                                                                        </label>
+                                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="lastName" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.lastName">
+                                                                        {{ formErros.lastName }}
+                                                                    </span>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label " for="middleName">Middle
+                                                                        Name</label>
+                                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="middleName" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.middleName">
+                                                                        {{ formErros.middleName }}
+                                                                    </span>
+                                                                </div>
+
+
+
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.gender}">
+                                                                    <label class="control-label " for="gender">Gender</label>
+                                                                    <select class="form-control" formControlName="gender" (blur)="logValidationErrors()">
+                                                                        <option class="hidden" selected disabled>Select
+                                                                            Gender</option>
+                                                                        <option selected [ngValue]="null ">Choose...</option>
+                                                                        <option>Male</option>
+                                                                        <option>Female</option>
+                                                                        <option>Prefer not to say</option>
+                                                                    </select>
+                                                                    <span class=" help-block" *ngIf="formErros.gender">
+                                                                            {{ formErros.gender }}
+                                                                            </span>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <!-- Button trigger modal -->
+                                                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#basicExampleModal">
+        Edit Member Projects
+      </button>
+
+                                                                    <!-- Modal -->
+                                                                    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog" role="document">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title" id="exampleModalLabel">Edit Projects</h5>
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <div>
+                                                                                        <div class="col-md-12">
+                                                                                            <div class="formArray row" formArrayName="project" *ngFor="let member of memberForm.get('project').controls; let i = index">
+                                                                                                <div class="col-12" [formGroupName]="i">
+                                                                                                    <div class="row">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-8">
+                                                                                                                    <h4>Project {{i+1}}</h4>
+                                                                                                                </div>
+
+                                                                                                                <div class="col-4 control-buttons">
+                                                                                                                    <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/subtraction-2-742239.png " alt=" " class="sub" width="24 " height="24" (click)="removeAddress(i)">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <hr>
+                                                                                                        </div>
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="form-group">
+                                                                                                                <label>Select
+                                                                                                                    Project</label>
+                                                                                                                <select class="form-control" formControlName="projectName">
+                                                                                                                    <option *ngFor="let project of
+                                                                                                                    projects" [value]="project.projectName">
+                                                                                                                        {{project.projectName}}
+                                                                                                                    </option>
+                            
+                                                                                                                </select>
+                                                                                                                <!-- <span class=" help-block"
+                                                                                                                    *ngIf="member.get('memberName').errors?.required && member.get('memberName').touched">
+                                                                                                                    Member Name is required
+                                                                                                                    </span> -->
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="row">
+                                                                                                                <div class="col">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label [attr.for]="'status'+i">Current
+                                                                                                                            Status*</label>
+                                                                                                                        <select [id]="'status'+i" class="form-control col-md-12" formControlName="status">
+                                                                                                                            <option selected [ngValue]="null ">Choose...</option>
+                                                                                                                        <option>Assigned</option>
+                                                                                                                        <option>Hard Locked</option>
+                                                                                                                        <option>Soft Locked</option>
+                                                                                                                        <option>Proposed</option>
+                                                                                                                        <option>Extended</option>
+                                                                                                                    </select>
+
+                                                                                                                        <!-- <span class=" help-block"
+                                                                                                                                *ngIf="member.get('status').errors?.required && member.get('status').touched">
+                                                                                                                                Status is requuired
+                                                                                                                                </span> -->
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="col">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label class="control-label " [attr.for]="'memberStartDate'+i">Start
+                                                                                                                            Date*</label>
+                                                                                                                        <input placeholder="yyyy-mm-dd" type="date" class="form-control" datepicker format="yyyy-mm-dd" name="memberStartDate" formControlName="memberStartDate" placeholder="yyyy-mm-dd" required>
+                                                                                                                        <!-- <span class="help-block"
+                                                                                                                        *ngIf="member.get('memberStartDate').errors?.required && member.get('memberStartDate').touched">
+                                                                                                                        Start date is required
+                                                                                                                    </span> -->
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div class="col">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label class="control-label" [attr.for]="'memberPlannedRollOff'+i">Planned
+                                                                                                                            Roll
+                                                                                                                            Off*</label>
+                                                                                                                        <input placeholder="yyyy-mm-dd" type="date" class="form-control" datepicker format="yyyy-mm-dd" name="memberPlannedRollOff" formControlName="memberPlannedRollOff" required>
+                                                                                                                        <!-- <span class="help-block"
+                                                                                                                        *ngIf="member.get('memberPlannedRollOff').errors?.required && member.get('memberPlannedRollOff').touched">
+                                                                                                                        Planned Roll off is required
+                                                                                                                    </span> -->
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <br>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <br>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button style="color: white" type="button" class="btn btn-default" (click)="addAddress()"><strong>
+                                                                                        Add
+                                                                                        Project </strong></button>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Save changes</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <!-- Second half of the page -->
+                                                            <div class="col-md-6">
+
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.cellNumber}">
+                                                                    <label class="control-label " for="cellNumber">Cell
+                                                                        Number</label>
+                                                                    <input type="tel" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onclick="phonenumber(txtEmpPhone)" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="" value="" formControlName="cellNumber" (blur)="logValidationErrors()"
+                                                                        onphonenumber />
+                                                                    <span class="help-block" *ngIf="formErros.cellNumber">
+                                                                        {{ formErros.cellNumber }}
+                                                                    </span>
+                                                                </div>
+
+
+
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.dateOfBirth}">
+                                                                    <label class="control-label " for="dateOfBirth">Date
+                                                                        of Birth</label>
+                                                                    <input type="date" class="form-control" placeholder="yyyy-mm-dd" value="" formControlName="dateOfBirth" (blur)="logValidationErrors()" datepicker />
+                                                                    <span class="help-block" *ngIf="formErros.dateOfBirth">
+                                                                        {{ formErros.dateOfBirth }}
+                                                                    </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.capability}">
+                                                                    <label class="control-label " for="capability">Capability</label>
+                                                                    <select class="form-control" formControlName="capability" (blur)="logValidationErrors()">
+                                                                        <option class="hidden" selected disabled>Select
+                                                                            Capability</option>
+                                                                        <option selected [ngValue]="null ">Choose...</option>
+                                                                        <option>Testing</option>
+                                                                        <option>Digital</option>
+                                                                    </select>
+                                                                    <span class=" help-block" *ngIf="formErros.capability">
+                                                                            {{ formErros.capability }}
+                                                                            </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error' : formErros.careerLevel}">
+                                                                    <label class="control-label " for="careerLevel">Career Level</label>
+                                                                    <select class="form-control" formControlName="careerlevel" (blur)="logValidationErrors()">
+                                                                        <option class="hidden" selected disabled>Select
+                                                                            Career Level</option>
+                                                                        <option selected [ngValue]="null ">Choose...</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                        <option>6</option>
+                                                                        <option>7</option>
+                                                                        <option>8</option>
+                                                                        <option>9</option>
+                                                                        <option>10</option>
+                                                                        <option>11</option>
+                                                                        <option>12</option>
+                                                                        <option>13</option>
+                                                                    </select>
+                                                                    <span class=" help-block" *ngIf="formErros.careerLevel">
+                                                                            {{ formErros.careerLevel }}
+                                                                            </span>
+                                                                </div><br>
+
+                                                                <div class="form-group">
+                                                                    <label>
+                                                                        <input type="checkbox" name="IsAdmin"
+                                                                            formControlName="IsAdmin" value="false">
+                                                                        Is Admin
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col-sm-offset-2 col">
+                                                                    <button type="submit" class="btn btn-default">Save</button>
+                                                                    <button type="button"  class="btn btn-primary"  data-toggle="modal"  data-target="#modalConfirmDelete">Cancel
+                                                                        </button>
+
+                                                                        <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                            <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+                                                                                <!--Content-->
+                                                                                <div class="modal-content text-center">
+                                                                                    <!--Header-->
+                                                                                    <div class="modal-header d-flex justify-content-center">
+                                                                                        <p class="heading">Are you sure?</p>
+                                                                                    </div>
+
+                                                                                    <!--Body-->
+                                                                                    <div class="modal-body">
+
+                                                                                        <i class="fas fa-times fa-4x animated rotateIn"></i>
+
+                                                                                    </div>
+
+                                                                                    <!--Footer-->
+                                                                                    <div class="modal-footer flex-center">
+                                                                                        <a href="/admin-team-list" class="btn btn-default">Yes</a>
+                                                                                        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!--/.Content-->
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- <a href="/admin-team-list"><button type="button"
+                                                                            class="btn btn-primary  btn-rounsded">Cancel</button></a> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

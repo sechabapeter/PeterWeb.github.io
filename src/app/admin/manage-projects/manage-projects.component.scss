@@ -1,0 +1,36 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+tbody {
+    background-color: white;
+    display: block;
+    height: 100%;
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    // text-align: center;
+}
+
+thead {
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+    color: black;
+}
+
+.container-fluid {
+    // display: block;
+    height: 100%;
+    // padding-top: 90px;
+    width: 100%;
+    position: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
+}

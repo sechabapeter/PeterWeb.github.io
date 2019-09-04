@@ -1,0 +1,276 @@
+<header>
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark aqua-gradient lighten-4
+        sticky-top">
+        <a class="navbar-brand" href="/home" (click)="setTitle( 'Home' )">
+            <img src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45" width="120" alt="accenture-logo">
+        </a>
+    </nav>
+</header>
+
+<div class="container contact">
+    <div class="row">
+        <div class="col-md-3 aqua-gradient">
+            <div class="contact-info">
+                <div class="container">
+                    <div class="avatar-upload">
+                        <div>
+                            <div>
+                                    <img class="avatar-preview"  id="imagePreview"
+                                    src="{{member.photoURL}}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="userData ml-12 row-2 text-center">
+                    <h2 class="d-block col" style="font-size: 1.5rem;
+                        font-weight: bold">{{ member.firstName }} {{ member.lastName }}</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="contact-form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Profile Information</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="false">Skills</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Projects</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content ml-1" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                                    <div class="active-cyan-4 mb-4">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show
+                                                active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row register-form">
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label style="font-weight:bold;">Enteprise
+                                                                    ID</label>
+                                                                <input type="text" class="form-control" id="enterpriseID" placeholder="None" [value]="member.enterpriseID" name="enterpriseID" readonly>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <hr />
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label style="font-weight:bold;">First
+                                                                        Name</label>
+                                                                    <input type="text" class="form-control" id="firstName" placeholder="None" [value]="member.firstName" name="firstName" readonly>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <hr />
+
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label style="font-weight:bold;">Last
+                                                                        Name</label>
+                                                                    <input type="text" class="form-control" id="lastName" placeholder="None" [value]="member.lastName" name="lastName" readonly>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <hr />
+
+
+
+
+                                                    </div>
+                                                    <!-- </div> -->
+
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label style="font-weight:bold;">Capability</label>
+                                                                <input type="text" class="form-control" id="capability" placeholder="None" [value]="member.capability" name="capability" readonly>
+                                                            </div>
+
+                                                        </div>
+                                                        <hr />
+
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <label style="font-weight:bold;">Career
+                                                                    Level</label>
+                                                                <input type="text" class="form-control" id="careerlevel" placeholder="None" [value]="member.careerlevel" name="careerlevel" readonly>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <hr>
+
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label style="font-weight:bold;">Cellphone
+                                                                        Number</label>
+                                                                    <input type="text" class="form-control" id="cellNumber" placeholder="None" [value]="member.cellNumber" name="cellNumber" readonly>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <hr />
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Another tab-->
+                                <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="active-cyan-4 mb-4">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show
+                                                active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row register-form" *ngFor="let project of
+                                                    member.project">
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="currentProject">Current
+                                                                Project</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="currentProject" placeholder="None" [value]="project.projectName" name="currentProject" readonly>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="currentStatus">Current
+                                                                Status</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="currentStatus" placeholder="None" [value]="project.status" name="currentStatus" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="size">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="startDate">Start
+                                                                Date</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="startDate" placeholder="None" [value]="project.memberStartDate" name="startDate" readonly>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label class="control-label" for="memberPlannedRollOff">Planned
+                                                                Roll Off</label>
+                                                            <div>
+                                                                <input type="text" class="form-control" id="memberPlannedRollOff" placeholder="None" [value]="project.memberPlannedRollOff" name="memberPlannedRollOff" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="size">
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <!--Another tab-->
+                                <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
+                                    <div class="active-cyan-4 mb-4">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show
+                                                active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                                <div class="row register-form">
+
+                                                    <!-- <div class="row"> -->
+                                                    <div class="col-md-12">
+                                                        <div class="row">
+                                                            <div class="col-md-3">
+                                                                <label style="font-weight:bold;">Skill
+                                                                        Name</label>
+                                                            </div>
+                                                            <br>
+                                                            <div class="col-md-3">
+                                                                <label style="font-weight:bold;">Skill
+                                                                        Level</label>
+                                                            </div>
+                                                            <br>
+                                                            <div class="col-md-3">
+                                                                <label style="font-weight:bold;">Last Used</label>
+                                                            </div>
+                                                            <br>
+                                                            <div class="col-md-3">
+                                                                <label style="font-weight:bold;">Skill Origin</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div *ngFor="let
+                                                                skill of
+                                                                member.skills">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <input type="text" class="form-control" id="skillName" placeholder="None" [value]="skill.skillName" name="skillName" readonly>
+                                                                </div>
+                                                                <br>
+                                                                <div class="col-md-3">
+                                                                    <input type="text" class="form-control" id="skillLevel" placeholder="None" [value]="skill.skillLevel" name="skillLevel" readonly>
+                                                                </div>
+                                                                <br>
+                                                                <div class="col-md-3">
+                                                                    <input type="text" class="form-control" id="lastUsed" placeholder="None" [value]="skill.lastUsed" name="lastUsed" readonly>
+                                                                </div>
+                                                                <br>
+                                                                <div class="col-md-3">
+                                                                    <input type="text" class="form-control" id="skillOrigin" placeholder="None" [value]="skill.skillOrigin" name="skillOrigin" readonly>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- </div> -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <a [routerLink]="[ '/team-list' ]"><button type="button"
+                                class="btn btn-default btn-rounded">Back</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

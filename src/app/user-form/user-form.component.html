@@ -1,0 +1,119 @@
+<header>
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark aqua-gradient lighten-4 fixed-top">
+        <!-- <a class="navbar-brand" href="/home" href="/admin-navigation" (click)="setTitle( 'Home' )"> -->
+        <img src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45" width="120" alt="accenture-logo">
+        <!-- </a> -->
+        <div class="navbar-brand">
+            <h1 class="smallerFont"></h1>
+        </div>
+    </nav>
+</header>
+
+<br>
+
+<div class="container contact">
+    <div class="row">
+        <div class="col-md-3 aqua-gradient">
+            <div class="contact-info text-center">
+                <img src="https://www.pngrepo.com/download/125995/multiple-users-silhouette.png" alt="" height="150px" />
+                <h3>New Member</h3>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="contact-form" *ngIf="(auth.user | async) || {} as user">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Member Information</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content ml-1" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+                                        <div class="row">
+
+                                            <div class="col-md-12 register-right">
+                                                <div class="tab-content" id="myTabContent">
+                                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                                        <div class="row register-form">
+                                                            <div class="col-md-6">
+
+                                                                <div class="form-group">
+                                                                    <label class="control-label " for="email">Email
+                                                                        Address</label>
+                                                                    <input type="email" formControlName="email" id="email" class="form-control">
+                                                                    <div *ngIf="email.invalid && email.dirty" class="notification is-danger">
+                                                                        Enter valid email address e.g. abc@accenture.com
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label" for="password">Generated
+                                                                        Password</label>
+                                                                    <input type="password" formControlName="password" id="password" [(ngModel)]="randomstring" class="form-control" readonly>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col">
+
+                                                                <button type="submit" class="btn btn-success  btn-rounded" [disabled]="!signupForm.valid">Submit</button>
+                                                                <button type="button"  class="btn btn-primary"  data-toggle="modal"  data-target="#modalConfirmDelete">Cancel
+                                                                    </button>
+
+                                                                    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+                                                                            <!--Content-->
+                                                                            <div class="modal-content text-center">
+                                                                                <!--Header-->
+                                                                                <div class="modal-header d-flex justify-content-center">
+                                                                                    <p class="heading"><strong>Are you sure?</strong>
+                                                                                    </p>
+                                                                                </div>
+
+                                                                                <!--Body-->
+                                                                                <div class="modal-body">
+
+                                                                                    <i class="fas fa-times fa-4x animated rotateIn"></i>
+
+                                                                                </div>
+
+                                                                                <!--Footer-->
+                                                                                <div class="modal-footer flex-center">
+                                                                                    <a href="/admin-team-list" class="btn btn-default">Yes</a>
+                                                                                    <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.Content-->
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- <a href="/admin-team-list"><button type="button"
+                                                                            class="btn btn-primary  btn-rounded">Cancel</button></a> -->
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <hr>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

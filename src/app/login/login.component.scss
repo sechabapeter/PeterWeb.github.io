@@ -1,0 +1,97 @@
+.loginbox {
+  width: 360px;
+  height: 430px;
+  background-color: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  margin-top: 5vh;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.7);
+
+  -webkit-box-shadow: 53px 68px 31px -24px rgba(2, 2, 15, 1);
+  -moz-box-shadow: 53px 68px 31px -24px rgba(2, 2, 15, 1);
+  box-shadow: 53px 68px 31px -24px rgba(2, 2, 15, 1);
+
+  z-index: 0;
+}
+.card {
+  background: transparent;
+  width: 360px;
+  height: 430px;
+}
+
+.btn {
+  border-radius: 20px;
+  font-family: #fff;
+  height: 50px;
+  width: 250px;
+  margin-left: 5vh;
+}
+
+.form-control {
+  background-color: #fff;
+  color: #fff;
+  z-index: 1;
+}
+.lable1 {
+  color: #fff;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+  margin-top: 2vh;
+  margin-left: 0vh;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  font-size: 16px;
+}
+
+.navbar-center h1 {
+  font-size: 26px;
+}
+.back {
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+  //position: relative;
+ 
+}
+.forgot {
+  background: transparent;
+  color: aqua;
+  margin-left: 13vh;
+  border: none;
+}
+
+
+
+// #footer {
+//   position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   height: 3rem; /* Footer height */
+//   margin-bottom: 0;
+//   padding: 1em;
+// }
+
+// input:focus + label,
+// input:active + label {
+//   background-color:white; 
+//   font-weight: bold;
+  
+// }
+// .lable1 {
+//   font-size: 15px;
+// } 

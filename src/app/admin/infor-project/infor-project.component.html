@@ -1,0 +1,304 @@
+<header>
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark aqua-gradient lighten-4
+    fixed-top">
+        <a class="navbar-brand" href="/admin-home" (click)="setTitle( 'Home' )">
+            <img src="https://cdn.freebiesupply.com/images/large/2x/accenture-logo-png-transparent.png" height="45" width="120" alt="accenture-logo">
+        </a>
+        <div class="navbar-brand">
+            <h1 class="smallerFont"></h1>
+        </div>
+    </nav>
+</header>
+<br>
+
+<div class="container contact">
+    <div class="row">
+        <div class="col-md-3 aqua-gradient">
+            <div class="contact-info">
+                <img src="https://static.thenounproject.com/png/213124-200.png" alt="image" />
+                <!-- <h2>{{ project.projectName }}</h2> -->
+                <h4 id="ll">{{pageTitle}} </h4>
+                <p id="pName">{{ project?.projectName }}</p>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="contact-form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Project
+                    Information</a>
+                                </li>
+                                <!--Project Status-->
+                                <!-- <li class="nav-item">
+                  <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab"
+                    aria-controls="connectedServices" aria-selected="false">Team Members</a>
+                </li> -->
+                            </ul>
+
+                            <div class="tab-content ml-1" id="myTabContent">
+                                <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+                                    <div class="row">
+
+                                        <div class="col-md-12 register-right">
+                                            <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                                    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+                                                        <div class="row register-form">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.projectID}">
+                                                                    <label class="control-label" for="projectID">Project
+                                    ID</label>
+                                                                    <input type="text" [(ngModel)]="randomstring" class="form-control" formControlName="projectID" (blur)="logValidationErrors()" readonly/>
+                                                                    <span class="help-block" *ngIf="formErros.projectID">
+                                    {{ formErros.projectID }}
+                                  </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.projectName}">
+                                                                    <label class="control-label" for="projectName">Project
+                                    Name</label>
+                                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="projectName" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.projectName">
+                                    {{ formErros.projectName }}
+                                  </span>
+                                                                </div>
+
+
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.clientName}">
+                                                                    <label class="control-label" for="clientName">Client
+                                    Name</label>
+                                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="clientName" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.clientName">
+                                    {{ formErros.clientName }}
+                                  </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.projectManager}">
+                                                                    <label class="control-label" for="projectManager">Project
+                                    Manager</label>
+                                                                    <input type="text" class="form-control" placeholder="" value="" formControlName="projectManager" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.projectManager">
+                                    {{ formErros.projectManager }}
+                                  </span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-6">
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.startDate}">
+                                                                    <label class="control-label" for="startDate">Start
+                                    Date</label>
+                                                                    <input type="date" class="form-control" placeholder="" value="" formControlName="startDate" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.startDate">
+                                    {{ formErros.startDate }}
+                                  </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.plannedRollOff}">
+                                                                    <label class="control-label" for="plannedRollOff">Planned
+                                    roll off</label>
+                                                                    <input type="date" class="form-control" placeholder="" value="" formControlName="plannedRollOff" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.plannedRollOff">
+                                    {{ formErros.plannedRollOff }}
+                                  </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.actualRollOff}">
+                                                                    <label class="control-label" for="actualRollOff">Actual
+                                    roll off</label>
+                                                                    <input type="date" class="form-control" rows="5" placeholder="" value="" formControlName="actualRollOff" (blur)="logValidationErrors()" />
+                                                                    <span class="help-block" *ngIf="formErros.actualRollOff">
+                                    {{ formErros.actualRollOff }}
+                                  </span>
+                                                                </div>
+
+                                                                <div class="form-group" [ngClass]="{'has-error'
+                                  : formErros.description}">
+                                                                    <label class="control-label" for="description">Project
+                                    Description</label>
+                                                                    <!-- <input type="text" class="form-control" placeholder="" value=""
+                                    formControlName="lastName" (blur)="logValidationErros()" /> -->
+                                                                    <textarea class="form-control" rows="5" id="description" (blur)="logValidationErrors()" formControlName="description">
+                                  </textarea>
+                                                                    <span class="help-block" *ngIf="formErros.description">
+                                    {{ formErros.description }}
+                                  </span>
+                                                                </div>
+
+                                                                <!-- <div class="form-group">
+                                  <label class="control-label " for="description">Project Description</label>
+                                  <div class="">
+                                    <textarea class="form-control" rows="5" id="description">
+                             
+                              </textarea>
+                                  </div>
+                                </div> -->
+                                                            </div>
+                                                            <!-- <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                  <button type="submit" class="btn btn-default">Save</button>
+                                  <a href="/manage-projects"><button type="button"
+                                      class="btn btn-primary btn-rounded">Cancel</button></a>
+                                </div>
+                              </div> -->
+                                                            <!-- <div class="form-group" class="col-md-12">
+                                <label class="control-label" for="members">
+                                  Members
+                                  <button type="button" (click)="addMember()"
+                                    [disabled]="projectForm.get('members').invalid">
+                                    <i class="fas fa-plus-circle"></i></button>
+                                </label>
+                              </div> -->
+                                                            <div formArrayName="members" class="col-md-12" *ngFor="let member of
+                                projectForm.get('members').controls; let i=
+                                index">
+                                                                <hr *ngIf="i>0 ">
+                                                                <div [formGroupName]="i">
+
+                                                                    <!-- <div class="form-group">
+
+                                    <div class="form-group" [ngClass]="{'has-error': formErros.searchMember}">
+                                      <label for="searchMember" [attr.for]="'searchMember'+i">Search Member*</label>
+                                      <div>
+                                        <input class="form-control" type="search" [id]="'searchMember'+i"
+                                          placeholder="Search Member" formControlName="searchMember"
+                                          (blur)="logValidationErrors()">
+                                        <span class="help-block" *ngIf="formErros.searchMember">
+                                          {{formErros.searchMember}}
+                                        </span>
+                                      </div>
+                                    </div>
+
+                                    <div class="col-md-2" *ngIf="projectForm.get('members').length > 1">
+                                      <button type="button" class="btn btn-primary btn-sm pull-right"
+                                        title="Delete Member" (click)="removeMember(i)">
+                                        <i class="fas fa-times"></i>
+                                      </button>
+                                    </div>
+                                    <div class="form-group"
+                                      [ngClass]="{'has-error': member.get('memberName').invalid && member.get('memberName').touched}">
+                                      <label for="selectMember" [attr.for]="'memberName'+i">Select Member</label>
+                                      <select class="SearchBox form-control" [id]="'memberName'+i"
+                                        formControlName="memberName">
+                                        <option *ngFor="let member of members | filter: txtName">{{member.firstName}}
+                                          {{member.lastName}}</option>
+                                      </select>
+                                      <span class="help-block"
+                                        *ngIf="member.get('memberName').errors?.required && member.get('memberName').touched">
+                                        Member Name is required
+                                      </span>
+                                    </div>
+
+                                  </div> -->
+                                                                    <!-- <div class="form-group">
+                                    <div class="form-group"
+                                      [ngClass]="{'has-error': member.get('memberStartDate').invalid && member.get('memberStartDate').touched}">
+                                      <label class="control-label " [attr.for]="'memberStartDate'+i">Start Date*</label>
+                                      <input placeholder="yyyy-mm-dd" [id]="'memberStartDate'+i" type="date"
+                                        class="form-control datepicker" format="yyyy-mm-dd" name="memberStartDate"
+                                        formControlName="memberStartDate" required>
+                                      <span class="help-block"
+                                        *ngIf="member.get('memberStartDate').errors?.required && member.get('memberStartDate').touched">
+                                        Start date is required
+                                      </span>
+                                    </div>
+
+                                    <div class="form-group"
+                                      [ngClass]="{'has-error': member.get('status').invalid && member.get('status').touched}">
+                                      <label [attr.for]="'status'+i">Current Status*</label>
+                                      <select [id]="'status'+i" class="form-control col-md-12" formControlName="status">
+                                        <option>Assigned</option>
+                                        <option>Hard Locked</option>
+                                        <option>Soft Locked</option>
+                                        <option>Proposed</option>
+                                        <option>Extended</option>
+                                      </select>
+                                      <span class="help-block"
+                                        *ngIf="member.get('status').errors?.required && member.get('status').touched">
+                                        Status is requuired
+                                      </span>
+                                    </div>
+
+                                    <div class="form-group"
+                                      [ngClass]="{'has-error': member.get('memberPlannedRollOff').invalid && member.get('memberPlannedRollOff').touched}">
+                                      <label class="control-label" [attr.for]="'memberPlannedRollOff'+i">Planned Roll
+                                        Off*</label>
+                                      <input placeholder="yyyy-mm-dd" type="date" class="form-control datepicker"
+                                        format="yyyy-mm-dd" [id]="'memberPlannedRollOff'+i" name="memberPlannedRollOff"
+                                        formControlName="memberPlannedRollOff" required>
+                                      <span class="help-block"
+                                        *ngIf="member.get('memberPlannedRollOff').errors?.required && member.get('memberPlannedRollOff').touched">
+                                        Planned Roll off is required
+                                      </span>
+                                    </div>
+
+                                  </div> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-md-12">
+                                                                    <button type="submit" class="btn btn-default">Save</button>
+                                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalConfirmDelete">Cancel
+                                  </button>
+
+                                                                    <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-sm
+                                      modal-notify modal-danger" role="document">
+                                                                            <!--Content-->
+                                                                            <div class="modal-content text-center">
+                                                                                <!--Header-->
+                                                                                <div class="modal-header d-flex
+                                          justify-content-center">
+                                                                                    <p class="heading">Are you sure?</p>
+                                                                                </div>
+
+                                                                                <!--Body-->
+                                                                                <div class="modal-body">
+
+                                                                                    <i class="fas fa-times fa-4x animated
+                                            rotateIn"></i>
+
+                                                                                </div>
+
+                                                                                <!--Footer-->
+                                                                                <div class="modal-footer flex-center">
+                                                                                    <a href="/manage-projects" class="btn
+                                            btn-default">Yes</a>
+                                                                                    <a type="button" class="btn btn-danger
+                                            waves-effect" data-dismiss="modal">No</a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--/.Content-->
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--Modal: modalConfirmDelete-->
+
+                                                                    <!-- <a href="/manage-projects"><button type="button"
+                                      class="btn btn-primary btn-rounded">Cancel</button></a> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>

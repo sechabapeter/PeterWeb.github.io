@@ -1,0 +1,25 @@
+<app-admin-navigation></app-admin-navigation>
+<section>
+  <div class="container-fluid container" id="wrapper">
+    <table class="table table-striped table-borederd dt-responsive" style="width: 100%" id="mydatatable">
+      <thead class="black white-text aqua-gradient lighten-4">
+        <tr>
+          <th>Project Name</th>
+          <th>Client Name</th>
+          <th>Project Manager</th>
+          <th><a [routerLink]="[ '/create-new-project' ]"><i class="fas fa-plus-circle fa-1.5x"></i>&nbsp;Add Poject</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <th scope="row">{{ project.projectName }}</th>
+          <td>{{ project.clientName }}</td>
+          <td>{{ project.projectManager }}</td>
+          <td><a (click)="updateProject(project.id)">Update</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
