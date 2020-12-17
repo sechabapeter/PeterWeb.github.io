@@ -28,7 +28,7 @@
     "bootstrap-select": "^1.13.10",
     "confirmation-component": "0.0.1",
     "core-js": "^2.5.4",
-    "datatables.net": "^1.10.19",
+    "datatables.net": "^1.10.22",
     "datatables.net-bs4": "^1.10.19",
     "firebase": "^6.2.0",
     "font-awesome": "^4.7.0",
